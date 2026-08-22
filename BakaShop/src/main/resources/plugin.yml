@@ -1,0 +1,41 @@
+name: BakaShop
+version: 1.0.0
+main: dev.tyler.shop.BakaShopPlugin
+description: A configurable shop using EssentialsX economy.
+author: Ashswagg - Tyler
+api-version: '1.21.11'
+depend: [Essentials]
+softdepend: [PlaceholderAPI, SmartSpawner]
+commands:
+  bakashop:
+    description: Open or manage the BakaShop.
+    usage: /<command> [reload]
+    aliases: [shop]
+  editshop:
+    description: Edit BakaShop items from commands.
+    usage: /<command> <additem|removeitem|edititem|removecoins|addcoins|addshells|removeshells>
+  sell:
+    description: Open the sell GUI.
+    usage: /<command>
+  amethystpick:
+    description: Choose amethyst pickaxe mining mode.
+    usage: /<command> <wall|floor>
+  enableshells:
+    description: Enable shell-currency shop categories.
+    usage: /<command>
+permissions:
+  bakashop.use:
+    description: Allows opening the shop.
+    default: true
+  bakashop.reload:
+    description: Allows reloading the shop config.
+    default: op
+  bakashop.edit:
+    description: Allows editing shop items and prices.
+    default: op
+  bakashop.sell:
+    description: Allows using the sell GUI.
+    default: true
+  bakashop.enableshells:
+    description: Allows enabling shell-currency shop categories.
+    default: op

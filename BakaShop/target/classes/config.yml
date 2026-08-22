@@ -1,0 +1,919 @@
+﻿shop:
+  title: "&d&lSERVER &b&lSHOP"
+  main-size: 27
+  category-size: 36
+
+shells:
+  enabled: false
+
+smart-spawners:
+  internal-enabled: true
+  disable-when-external-installed: true
+  external-plugin-names:
+    - SmartSpawner
+    - SmartSpawners
+    - SmartSpawnerSystem
+    - SmartSpawner-System
+
+messages:
+  prefix: "&8[&d&lBaka&b&lShop&8] &r"
+  reloaded: "&aConfig reloaded."
+  player-only: "&cOnly players can use this command."
+  no-permission: "&cYou do not have permission."
+  invalid-config: "&cThe shop config has no valid categories."
+  not-enough-money: "&cYou need &e%price%&c to buy this."
+  no-space: "&cYou do not have enough inventory space."
+  not-enough-items: "&cYou do not have enough items to sell."
+  bought: "&aBought &ex%amount% %item% &afor &e%price%&a."
+  sold: "&aSold &ex%amount% %item% &afor &e%price%&a."
+  economy-error: "&cCurrency transaction failed. Check console for the exact reason."
+
+categories:
+  blocks:
+    slot: 10
+    icon: MOSS_BLOCK
+    title: "&a&lBLOCK"
+    menu-title: "&8Shop : Blocks"
+    lore:
+      - "&d&lSERVER &b&lSHOP"
+      - ""
+      - "&9Information:"
+      - "&aÂ¦ &7Browse and &apurchase"
+      - "&aÂ¦ &abuilding &7blocks"
+      - ""
+      - "&eâ–» &lCLICK &eto Browse"
+    pages:
+      1:
+        items:
+          grass_block: {slot: 10, material: GRASS_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          dirt: {slot: 11, material: DIRT, amount: 16, buy: 75, sell: 18.75}
+          stone_bricks: {slot: 12, material: STONE_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          cobblestone: {slot: 13, material: COBBLESTONE, amount: 16, buy: 75, sell: 18.75}
+          mossy_cobblestone: {slot: 14, material: MOSSY_COBBLESTONE, amount: 16, buy: 75, sell: 18.75}
+          smooth_stone: {slot: 15, material: SMOOTH_STONE, amount: 16, buy: 75, sell: 18.75}
+          granite: {slot: 16, material: GRANITE, amount: 16, buy: 75, sell: 18.75}
+          diorite: {slot: 19, material: DIORITE, amount: 16, buy: 75, sell: 18.75}
+          andesite: {slot: 20, material: ANDESITE, amount: 16, buy: 75, sell: 18.75}
+          oak_log: {slot: 21, material: OAK_LOG, amount: 16, buy: 75, sell: 18.75}
+          dark_oak_log: {slot: 22, material: DARK_OAK_LOG, amount: 16, buy: 75, sell: 18.75}
+          birch_log: {slot: 23, material: BIRCH_LOG, amount: 16, buy: 75, sell: 18.75}
+          spruce_planks: {slot: 24, material: SPRUCE_PLANKS, amount: 16, buy: 75, sell: 18.75}
+          jungle_log: {slot: 25, material: JUNGLE_LOG, amount: 16, buy: 75, sell: 18.75}
+      2:
+        items:
+          stripped_dark_oak_log: {slot: 10, material: STRIPPED_DARK_OAK_LOG, amount: 16, buy: 75, sell: 18.75}
+          snow_block: {slot: 11, material: SNOW_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          ice: {slot: 12, material: ICE, amount: 16, buy: 75, sell: 18.75}
+          packed_ice: {slot: 13, material: PACKED_ICE, amount: 16, buy: 75, sell: 18.75}
+          sponge: {slot: 14, material: SPONGE, amount: 16, buy: 75, sell: 18.75}
+          sand: {slot: 15, material: SAND, amount: 16, buy: 75, sell: 18.75}
+          sandstone: {slot: 16, material: SANDSTONE, amount: 16, buy: 75, sell: 18.75}
+          end_stone: {slot: 19, material: END_STONE, amount: 16, buy: 75, sell: 18.75}
+          terracotta: {slot: 20, material: TERRACOTTA, amount: 16, buy: 75, sell: 18.75}
+          glass: {slot: 21, material: GLASS, amount: 16, buy: 75, sell: 18.75}
+          chest: {slot: 22, material: CHEST, amount: 16, buy: 75, sell: 18.75}
+          spawner: {slot: 23, material: SPAWNER, amount: 1, buy: 75, sell: 18.75}
+          brick: {slot: 24, material: BRICK, amount: 16, buy: 75, sell: 18.75}
+          obsidian: {slot: 25, material: OBSIDIAN, amount: 16, buy: 75, sell: 18.75}
+      3:
+        items:
+          sculk: {slot: 10, material: SCULK, amount: 16, buy: 75, sell: 18.75}
+          moss_block: {slot: 11, material: MOSS_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          soul_soil: {slot: 12, material: SOUL_SOIL, amount: 16, buy: 75, sell: 18.75}
+          end_stone_two: {slot: 13, material: END_STONE, amount: 16, buy: 75, sell: 18.75}
+          warped_wart_block: {slot: 14, material: WARPED_WART_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          bookshelf: {slot: 15, material: BOOKSHELF, amount: 16, buy: 75, sell: 18.75}
+          sea_lantern: {slot: 16, material: SEA_LANTERN, amount: 16, buy: 75, sell: 18.75}
+          purpur_block: {slot: 19, material: PURPUR_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          end_stone_bricks: {slot: 20, material: END_STONE_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          enchanting_table: {slot: 21, material: ENCHANTING_TABLE, amount: 1, buy: 75, sell: 18.75}
+          deepslate: {slot: 22, material: DEEPSLATE, amount: 16, buy: 75, sell: 18.75}
+          mud_bricks: {slot: 23, material: MUD_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          flowering_azalea_leaves: {slot: 24, material: FLOWERING_AZALEA_LEAVES, amount: 16, buy: 75, sell: 18.75}
+          white_concrete: {slot: 25, material: WHITE_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+      4:
+        items:
+          light_gray_concrete: {slot: 10, material: LIGHT_GRAY_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          gray_concrete: {slot: 11, material: GRAY_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          black_concrete: {slot: 12, material: BLACK_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          brown_concrete: {slot: 13, material: BROWN_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          red_concrete: {slot: 14, material: RED_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          orange_concrete: {slot: 15, material: ORANGE_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          yellow_concrete: {slot: 16, material: YELLOW_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          lime_concrete: {slot: 19, material: LIME_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          green_concrete: {slot: 20, material: GREEN_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          cyan_concrete: {slot: 21, material: CYAN_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          light_blue_concrete: {slot: 22, material: LIGHT_BLUE_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          blue_concrete: {slot: 23, material: BLUE_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          purple_concrete: {slot: 24, material: PURPLE_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          magenta_concrete: {slot: 25, material: MAGENTA_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+      5:
+        items:
+          pink_concrete: {slot: 10, material: PINK_CONCRETE, amount: 16, buy: 75, sell: 18.75}
+          white_wool: {slot: 11, material: WHITE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          light_gray_wool: {slot: 12, material: LIGHT_GRAY_WOOL, amount: 16, buy: 75, sell: 18.75}
+          gray_wool: {slot: 13, material: GRAY_WOOL, amount: 16, buy: 75, sell: 18.75}
+          blackstone: {slot: 14, material: BLACKSTONE, amount: 16, buy: 75, sell: 18.75}
+          brown_wool: {slot: 15, material: BROWN_WOOL, amount: 16, buy: 75, sell: 18.75}
+          gilded_blackstone: {slot: 16, material: GILDED_BLACKSTONE, amount: 16, buy: 75, sell: 18.75}
+          polished_blackstone_bricks: {slot: 19, material: POLISHED_BLACKSTONE_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          chiseled_polished_blackstone: {slot: 20, material: CHISELED_POLISHED_BLACKSTONE, amount: 16, buy: 75, sell: 18.75}
+          cracked_polished_blackstone_bricks: {slot: 21, material: CRACKED_POLISHED_BLACKSTONE_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          polished_blackstone_brick_stairs: {slot: 22, material: POLISHED_BLACKSTONE_BRICK_STAIRS, amount: 16, buy: 75, sell: 18.75}
+          polished_blackstone_brick_slab: {slot: 23, material: POLISHED_BLACKSTONE_BRICK_SLAB, amount: 16, buy: 75, sell: 18.75}
+          cobbled_deepslate: {slot: 24, material: COBBLED_DEEPSLATE, amount: 16, buy: 75, sell: 18.75}
+          polished_deepslate: {slot: 25, material: POLISHED_DEEPSLATE, amount: 16, buy: 75, sell: 18.75}
+      6:
+        items:
+          deepslate_bricks: {slot: 10, material: DEEPSLATE_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          cut_copper: {slot: 11, material: CUT_COPPER, amount: 16, buy: 75, sell: 18.75}
+          carved_pumpkin: {slot: 12, material: CARVED_PUMPKIN, amount: 16, buy: 75, sell: 18.75}
+          bricks: {slot: 13, material: BRICKS, amount: 16, buy: 75, sell: 18.75}
+          barrel: {slot: 14, material: BARREL, amount: 16, buy: 75, sell: 18.75}
+          coarse_dirt: {slot: 15, material: COARSE_DIRT, amount: 16, buy: 75, sell: 18.75}
+          quartz_block: {slot: 16, material: QUARTZ_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          smooth_quartz: {slot: 19, material: SMOOTH_QUARTZ, amount: 16, buy: 75, sell: 18.75}
+          sandstone_two: {slot: 20, material: SANDSTONE, amount: 16, buy: 75, sell: 18.75}
+          oxidized_copper: {slot: 21, material: OXIDIZED_COPPER, amount: 16, buy: 75, sell: 18.75}
+          sculk_catalyst: {slot: 22, material: SCULK_CATALYST, amount: 16, buy: 75, sell: 18.75}
+          crying_obsidian: {slot: 23, material: CRYING_OBSIDIAN, amount: 16, buy: 75, sell: 18.75}
+          stone_bricks_two: {slot: 24, material: STONE_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          sculk_two: {slot: 25, material: SCULK, amount: 16, buy: 75, sell: 18.75}
+      7:
+        items:
+          tinted_glass: {slot: 10, material: TINTED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          tnt: {slot: 11, material: TNT, amount: 16, buy: 75, sell: 18.75}
+          candle: {slot: 12, material: CANDLE, amount: 16, buy: 75, sell: 18.75}
+          white_candle: {slot: 13, material: WHITE_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          light_gray_candle: {slot: 14, material: LIGHT_GRAY_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          gray_candle: {slot: 15, material: GRAY_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          black_candle: {slot: 16, material: BLACK_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          brown_candle: {slot: 19, material: BROWN_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          red_candle: {slot: 20, material: RED_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          orange_candle: {slot: 21, material: ORANGE_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          yellow_candle: {slot: 22, material: YELLOW_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          lime_candle: {slot: 23, material: LIME_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          green_candle: {slot: 24, material: GREEN_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          cyan_candle: {slot: 25, material: CYAN_CANDLE, amount: 16, buy: 75, sell: 18.75}
+      8:
+        items:
+          light_blue_candle: {slot: 10, material: LIGHT_BLUE_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          blue_candle: {slot: 11, material: BLUE_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          purple_candle: {slot: 12, material: PURPLE_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          magenta_candle: {slot: 13, material: MAGENTA_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          pink_candle: {slot: 14, material: PINK_CANDLE, amount: 16, buy: 75, sell: 18.75}
+          white_wool_two: {slot: 15, material: WHITE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          lime_wool: {slot: 16, material: LIME_WOOL, amount: 16, buy: 75, sell: 18.75}
+          pink_wool: {slot: 19, material: PINK_WOOL, amount: 16, buy: 75, sell: 18.75}
+          light_gray_wool_two: {slot: 20, material: LIGHT_GRAY_WOOL, amount: 16, buy: 75, sell: 18.75}
+          gray_wool_two: {slot: 21, material: GRAY_WOOL, amount: 16, buy: 75, sell: 18.75}
+          black_wool: {slot: 22, material: BLACK_WOOL, amount: 16, buy: 75, sell: 18.75}
+          brown_wool_two: {slot: 23, material: BROWN_WOOL, amount: 16, buy: 75, sell: 18.75}
+          red_wool: {slot: 24, material: RED_WOOL, amount: 16, buy: 75, sell: 18.75}
+          orange_wool: {slot: 25, material: ORANGE_WOOL, amount: 16, buy: 75, sell: 18.75}
+      9:
+        items:
+          yellow_wool: {slot: 10, material: YELLOW_WOOL, amount: 16, buy: 75, sell: 18.75}
+          lime_wool_two: {slot: 11, material: LIME_WOOL, amount: 16, buy: 75, sell: 18.75}
+          green_wool: {slot: 12, material: GREEN_WOOL, amount: 16, buy: 75, sell: 18.75}
+          cyan_wool: {slot: 13, material: CYAN_WOOL, amount: 16, buy: 75, sell: 18.75}
+          light_blue_wool: {slot: 14, material: LIGHT_BLUE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          blue_wool: {slot: 15, material: BLUE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          purple_wool: {slot: 16, material: PURPLE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          magenta_wool: {slot: 19, material: MAGENTA_WOOL, amount: 16, buy: 75, sell: 18.75}
+          pink_wool_two: {slot: 20, material: PINK_WOOL, amount: 16, buy: 75, sell: 18.75}
+          chiseled_tuff: {slot: 21, material: CHISELED_TUFF, amount: 16, buy: 75, sell: 18.75}
+          tuff_bricks: {slot: 22, material: TUFF_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          orange_wool_two: {slot: 23, material: ORANGE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          polished_blackstone: {slot: 24, material: POLISHED_BLACKSTONE, amount: 16, buy: 75, sell: 18.75}
+          amethyst_block: {slot: 25, material: AMETHYST_BLOCK, amount: 16, buy: 75, sell: 18.75}
+      10:
+        items:
+          mossy_cobblestone_two: {slot: 10, material: MOSSY_COBBLESTONE, amount: 16, buy: 75, sell: 18.75}
+          red_wool_two: {slot: 11, material: RED_WOOL, amount: 16, buy: 75, sell: 18.75}
+          orange_wool_three: {slot: 12, material: ORANGE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          yellow_wool_two: {slot: 13, material: YELLOW_WOOL, amount: 16, buy: 75, sell: 18.75}
+          lime_wool_three: {slot: 14, material: LIME_WOOL, amount: 16, buy: 75, sell: 18.75}
+          green_wool_two: {slot: 15, material: GREEN_WOOL, amount: 16, buy: 75, sell: 18.75}
+          cyan_wool_two: {slot: 16, material: CYAN_WOOL, amount: 16, buy: 75, sell: 18.75}
+          light_blue_wool_two: {slot: 19, material: LIGHT_BLUE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          blue_wool_two: {slot: 20, material: BLUE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          purple_wool_two: {slot: 21, material: PURPLE_WOOL, amount: 16, buy: 75, sell: 18.75}
+          magenta_wool_two: {slot: 22, material: MAGENTA_WOOL, amount: 16, buy: 75, sell: 18.75}
+          pink_wool_three: {slot: 23, material: PINK_WOOL, amount: 16, buy: 75, sell: 18.75}
+          brown_wool_three: {slot: 24, material: BROWN_WOOL, amount: 16, buy: 75, sell: 18.75}
+          mushroom_stem: {slot: 25, material: MUSHROOM_STEM, amount: 16, buy: 75, sell: 18.75}
+      11:
+        items:
+          brown_mushroom_block: {slot: 10, material: BROWN_MUSHROOM_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          dark_oak_planks: {slot: 11, material: DARK_OAK_PLANKS, amount: 16, buy: 75, sell: 18.75}
+          spruce_planks_two: {slot: 12, material: SPRUCE_PLANKS, amount: 16, buy: 75, sell: 18.75}
+          red_terracotta: {slot: 13, material: RED_TERRACOTTA, amount: 16, buy: 75, sell: 18.75}
+          orange_terracotta: {slot: 14, material: ORANGE_TERRACOTTA, amount: 16, buy: 75, sell: 18.75}
+          end_stone_three: {slot: 15, material: END_STONE, amount: 16, buy: 75, sell: 18.75}
+          end_stone_bricks_two: {slot: 16, material: END_STONE_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          end_stone_brick_stairs: {slot: 19, material: END_STONE_BRICK_STAIRS, amount: 16, buy: 75, sell: 18.75}
+          end_stone_brick_slab: {slot: 20, material: END_STONE_BRICK_SLAB, amount: 16, buy: 75, sell: 18.75}
+          end_stone_brick_wall: {slot: 21, material: END_STONE_BRICK_WALL, amount: 16, buy: 75, sell: 18.75}
+          purpur_block_two: {slot: 22, material: PURPUR_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          purpur_pillar: {slot: 23, material: PURPUR_PILLAR, amount: 16, buy: 75, sell: 18.75}
+          purpur_slab: {slot: 24, material: PURPUR_SLAB, amount: 16, buy: 75, sell: 18.75}
+          purpur_stairs: {slot: 25, material: PURPUR_STAIRS, amount: 16, buy: 75, sell: 18.75}
+      12:
+        items:
+          respawn_anchor: {slot: 10, material: RESPAWN_ANCHOR, amount: 1, buy: 75, sell: 18.75}
+          chorus_flower: {slot: 11, material: CHORUS_FLOWER, amount: 16, buy: 75, sell: 18.75}
+          purpur_block_three: {slot: 12, material: PURPUR_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          obsidian_two: {slot: 13, material: OBSIDIAN, amount: 16, buy: 75, sell: 18.75}
+          crying_obsidian_two: {slot: 14, material: CRYING_OBSIDIAN, amount: 16, buy: 75, sell: 18.75}
+          end_rod: {slot: 15, material: END_ROD, amount: 16, buy: 75, sell: 18.75}
+          ender_chest: {slot: 16, material: ENDER_CHEST, amount: 1, buy: 75, sell: 18.75}
+          netherrack: {slot: 19, material: NETHERRACK, amount: 16, buy: 75, sell: 18.75}
+          nether_bricks: {slot: 20, material: NETHER_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          red_nether_bricks: {slot: 21, material: RED_NETHER_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          cracked_nether_bricks: {slot: 22, material: CRACKED_NETHER_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          chiseled_nether_bricks: {slot: 23, material: CHISELED_NETHER_BRICKS, amount: 16, buy: 75, sell: 18.75}
+          redstone_ore: {slot: 24, material: REDSTONE_ORE, amount: 16, buy: 75, sell: 18.75}
+          quartz_block_two: {slot: 25, material: QUARTZ_BLOCK, amount: 16, buy: 75, sell: 18.75}
+      13:
+        items:
+          nether_wart_block: {slot: 10, material: NETHER_WART_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          soul_soil_two: {slot: 11, material: SOUL_SOIL, amount: 16, buy: 75, sell: 18.75}
+          soul_sand: {slot: 12, material: SOUL_SAND, amount: 16, buy: 75, sell: 18.75}
+          magma_block: {slot: 13, material: MAGMA_BLOCK, amount: 16, buy: 75, sell: 18.75}
+          crimson_nylium: {slot: 14, material: CRIMSON_NYLIUM, amount: 16, buy: 75, sell: 18.75}
+          warped_nylium: {slot: 15, material: WARPED_NYLIUM, amount: 16, buy: 75, sell: 18.75}
+          warped_planks: {slot: 16, material: WARPED_PLANKS, amount: 16, buy: 75, sell: 18.75}
+          gilded_blackstone_two: {slot: 19, material: GILDED_BLACKSTONE, amount: 16, buy: 75, sell: 18.75}
+          polished_blackstone_two: {slot: 20, material: POLISHED_BLACKSTONE, amount: 16, buy: 75, sell: 18.75}
+          polished_blackstone_bricks_two: {slot: 21, material: POLISHED_BLACKSTONE_BRICKS, amount: 16, buy: 75, sell: 18.75}
+      14:
+        items:
+          light_gray_stained_glass: {slot: 10, material: LIGHT_GRAY_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          orange_stained_glass: {slot: 11, material: ORANGE_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          purple_stained_glass: {slot: 12, material: PURPLE_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          light_blue_stained_glass: {slot: 13, material: LIGHT_BLUE_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          yellow_stained_glass: {slot: 14, material: YELLOW_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          lime_stained_glass: {slot: 15, material: LIME_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          pink_stained_glass: {slot: 16, material: PINK_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          black_stained_glass: {slot: 19, material: BLACK_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          gray_stained_glass: {slot: 20, material: GRAY_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          cyan_stained_glass: {slot: 21, material: CYAN_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          purple_stained_glass_two: {slot: 22, material: PURPLE_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          blue_stained_glass: {slot: 23, material: BLUE_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          brown_stained_glass: {slot: 24, material: BROWN_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          green_stained_glass: {slot: 25, material: GREEN_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+      15:
+        items:
+          red_stained_glass: {slot: 10, material: RED_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+          black_stained_glass_two: {slot: 11, material: BLACK_STAINED_GLASS, amount: 16, buy: 75, sell: 18.75}
+
+  food:
+    slot: 11
+    icon: GOLDEN_CARROT
+    title: "&6&lFOOD"
+    menu-title: "&8Shop : Food"
+    lore:
+      - "&d&lSERVER &b&lSHOP"
+      - ""
+      - "&9Information:"
+      - "&6Â¦ &7Browse and &6purchase"
+      - "&6Â¦ &6food"
+      - ""
+      - "&eâ–» &lCLICK &eto Browse"
+    items:
+      golden_carrot:
+        slot: 10
+        material: GOLDEN_CARROT
+        amount: 8
+        buy: 90
+        sell: 26.25
+        name: "&6Golden Carrot"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      cooked_beef:
+        slot: 11
+        material: COOKED_BEEF
+        amount: 16
+        buy: 60
+        sell: 15
+        name: "&cSteak"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      bread:
+        slot: 12
+        material: BREAD
+        amount: 16
+        buy: 41.25
+        sell: 9
+        name: "&eBread"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      cooked_chicken:
+        slot: 13
+        material: COOKED_CHICKEN
+        amount: 16
+        buy: 52.5
+        sell: 13.5
+        name: "&fCooked Chicken"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      baked_potato:
+        slot: 14
+        material: BAKED_POTATO
+        amount: 16
+        buy: 33.75
+        sell: 7.5
+        name: "&6Baked Potato"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      sweet_berries:
+        slot: 15
+        material: SWEET_BERRIES
+        amount: 16
+        buy: 30
+        sell: 7.5
+        name: "&cSweet Berries"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      carrot:
+        slot: 16
+        material: CARROT
+        amount: 16
+        buy: 26.25
+        sell: 7.5
+        name: "&6Carrot"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+
+  spawner:
+    slot: 12
+    icon: VAULT
+    currency: shells
+    currency-placeholder: "%shells_short%"
+    currency-take-command: "shells take %player% %amount%"
+    currency-give-command: "shells give %player% %amount%"
+    currency-singular: "shell"
+    currency-plural: "shells"
+    title: "&5&lSPAWNER"
+    menu-title: "&5&lSPAWNER &fSHOP"
+    lore:
+      - "&d&lSERVER &b&lSHOP"
+      - ""
+      - "&9Information:"
+      - "&5Â¦ &7Browse and &5purchase"
+      - "&5Â¦ &7mob &5spawners"
+      - ""
+      - "&eâ–» &lCLICK &eto Browse"
+    items:
+      skeleton_spawner:
+        slot: 10
+        material: SPAWNER
+        spawner-type: SKELETON
+        amount: 1
+        buy: 5000
+        sell: 0.0
+        name: "&f&lSkeleton Spawner"
+        lore: ["&7Left click: buy for &e%buy%", "&dSmart Spawner: gathers drops and XP."]
+      creeper_spawner:
+        slot: 11
+        material: SPAWNER
+        spawner-type: CREEPER
+        amount: 1
+        buy: 2500
+        sell: 0.0
+        name: "&a&lCreeper Spawner"
+        lore: ["&7Left click: buy for &e%buy%", "&dSmart Spawner: gathers drops and XP."]
+      zombie_spawner:
+        slot: 12
+        material: SPAWNER
+        spawner-type: ZOMBIE
+        amount: 1
+        buy: 500
+        sell: 0.0
+        name: "&2&lZombie Spawner"
+        lore: ["&7Left click: buy for &e%buy%", "&dSmart Spawner: gathers drops and XP."]
+      cow_spawner:
+        slot: 13
+        material: SPAWNER
+        spawner-type: COW
+        amount: 1
+        buy: 1500
+        sell: 0.0
+        name: "&6&lCow Spawner"
+        lore: ["&7Left click: buy for &e%buy%", "&dSmart Spawner: gathers drops and XP."]
+      chicken_spawner:
+        slot: 14
+        material: SPAWNER
+        spawner-type: CHICKEN
+        amount: 1
+        buy: 1000
+        sell: 0.0
+        name: "&e&lChicken Spawner"
+        lore: ["&7Left click: buy for &e%buy%", "&dSmart Spawner: gathers drops and XP."]
+      spider_spawner:
+        slot: 15
+        material: SPAWNER
+        spawner-type: SPIDER
+        amount: 1
+        buy: 2500
+        sell: 0.0
+        name: "&8&lSpider Spawner"
+        lore: ["&7Left click: buy for &e%buy%", "&dSmart Spawner: gathers drops and XP."]
+      iron_golem_spawner:
+        slot: 16
+        material: SPAWNER
+        spawner-type: IRON_GOLEM
+        amount: 1
+        buy: 7000
+        sell: 0.0
+        name: "&f&lIron Golem Spawner"
+        lore: ["&7Left click: buy for &e%buy%", "&dSmart Spawner: gathers iron."]
+
+  gear:
+    slot: 13
+    icon: TOTEM_OF_UNDYING
+    title: "&b&lGEAR"
+    menu-title: "&8Shop : Gear"
+    lore:
+      - "&d&lSERVER &b&lSHOP"
+      - ""
+      - "&9Information:"
+      - "&bÂ¦ &7Browse and &bpurchase"
+      - "&bÂ¦ &7gear for your &bjourney"
+      - ""
+      - "&eâ–» &lCLICK &eto Browse"
+    items:
+      diamond_helmet:
+        slot: 10
+        material: DIAMOND_HELMET
+        amount: 1
+        buy: 187500
+        sell: 0.0
+        name: "&aDiamond Helmet"
+        enchants: {protection: 4, aqua_affinity: 1, unbreaking: 3, mending: 1}
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      diamond_chestplate:
+        slot: 11
+        material: DIAMOND_CHESTPLATE
+        amount: 1
+        buy: 187500
+        sell: 0.0
+        name: "&aDiamond Chestplate"
+        enchants: {protection: 4, unbreaking: 3, mending: 1}
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      diamond_leggings:
+        slot: 12
+        material: DIAMOND_LEGGINGS
+        amount: 1
+        buy: 187500
+        sell: 0.0
+        name: "&aDiamond Leggings"
+        enchants: {blast_protection: 4, unbreaking: 3, mending: 1}
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      diamond_boots:
+        slot: 13
+        material: DIAMOND_BOOTS
+        amount: 1
+        buy: 187500
+        sell: 0.0
+        name: "&aDiamond Boots"
+        enchants: {blast_protection: 4, feather_falling: 4, unbreaking: 3, mending: 1}
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      diamond_sword:
+        slot: 14
+        material: DIAMOND_SWORD
+        amount: 1
+        buy: 56250
+        sell: 0.0
+        name: "&aDiamond Sword"
+        enchants: {sharpness: 5, knockback: 1, unbreaking: 3, mending: 1}
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      diamond_pickaxe:
+        slot: 15
+        material: DIAMOND_PICKAXE
+        amount: 1
+        buy: 56250
+        sell: 0.0
+        name: "&aDiamond Pickaxe"
+        enchants: {silk_touch: 1, efficiency: 5, unbreaking: 3, mending: 1}
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      experience_bottle:
+        slot: 16
+        material: EXPERIENCE_BOTTLE
+        amount: 16
+        buy: 11250
+        sell: 0.0
+        name: "&aBottle o' Enchanting"
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      obsidian:
+        slot: 19
+        material: OBSIDIAN
+        amount: 64
+        buy: 7500
+        sell: 0.0
+        name: "&aObsidian"
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      enchanted_book:
+        slot: 20
+        material: ENCHANTED_BOOK
+        amount: 1
+        buy: 37500
+        sell: 0.0
+        name: "&aEnchanted Book"
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      ender_pearl:
+        slot: 21
+        material: ENDER_PEARL
+        amount: 16
+        buy: 300
+        sell: 90
+        name: "&aEnder Pearl"
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      totem:
+        slot: 22
+        material: TOTEM_OF_UNDYING
+        amount: 1
+        buy: 3750
+        sell: 1125
+        name: "&aTotem of Undying"
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      golden_apple:
+        slot: 23
+        material: GOLDEN_APPLE
+        amount: 1
+        buy: 75000
+        sell: 0.0
+        name: "&aGolden Apple"
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      crying_obsidian:
+        slot: 24
+        material: CRYING_OBSIDIAN
+        amount: 64
+        buy: 11250
+        sell: 0.0
+        name: "&aCrying Obsidian"
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+      glowstone:
+        slot: 25
+        material: GLOWSTONE
+        amount: 64
+        buy: 3750
+        sell: 0.0
+        name: "&aGlowstone"
+        lore: ["&7Description", "", "&9Information:", "&aÂ¦ &7Item you are &aabout", "&aÂ¦ &7to &apurchase", "", "&aÂ¦ $ &7Buy Price: &a%buy%", "", "&eâ–º &lCLICK &eto Buy"]
+
+  farm:
+    slot: 14
+    icon: WHEAT
+    title: "&e&lFARM"
+    menu-title: "&8Shop : Farm"
+    lore:
+      - "&d&lSERVER &b&lSHOP"
+      - ""
+      - "&9Information:"
+      - "&eÂ¦ &7Browse and &epurchase"
+      - "&eÂ¦ &efarming &7goods"
+      - ""
+      - "&eâ–» &lCLICK &eto Browse"
+    items:
+      sugar_cane:
+        slot: 10
+        material: SUGAR_CANE
+        amount: 16
+        buy: 45
+        sell: 11.25
+        name: "&aSugar Cane"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      bamboo:
+        slot: 11
+        material: BAMBOO
+        amount: 16
+        buy: 37.5
+        sell: 9
+        name: "&aBamboo"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      cactus:
+        slot: 12
+        material: CACTUS
+        amount: 16
+        buy: 52.5
+        sell: 13.5
+        name: "&aCactus"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      pumpkin:
+        slot: 13
+        material: PUMPKIN
+        amount: 16
+        buy: 60
+        sell: 15
+        name: "&6Pumpkin"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      melon:
+        slot: 14
+        material: MELON
+        amount: 16
+        buy: 60
+        sell: 15
+        name: "&aMelon"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      kelp:
+        slot: 15
+        material: KELP
+        amount: 16
+        buy: 26.25
+        sell: 7.5
+        name: "&aKelp"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      wheat:
+        slot: 16
+        material: WHEAT
+        amount: 16
+        buy: 30
+        sell: 7.5
+        name: "&eWheat"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      dead_bush:
+        slot: 22
+        material: DEAD_BUSH
+        amount: 16
+        buy: 26.25
+        sell: 7.5
+        name: "&6Dead Bush"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      lapis_block:
+        slot: 23
+        material: LAPIS_BLOCK
+        amount: 16
+        buy: 187.5
+        sell: 45
+        name: "&9Lapis Block"
+        lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+
+  redstone:
+    slot: 15
+    icon: REDSTONE
+    title: "&c&lREDSTONE"
+    menu-title: "&8Shop : Redstone"
+    lore:
+      - "&d&lSERVER &b&lSHOP"
+      - ""
+      - "&9Information:"
+      - "&cÂ¦ &7Browse and &cpurchase"
+      - "&cÂ¦ &7redstone &ccomponents"
+      - ""
+      - "&eâ–» &lCLICK &eto Browse"
+    pages:
+      1:
+        items:
+          redstone:
+            slot: 10
+            material: REDSTONE
+            amount: 16
+            buy: 60
+            sell: 15
+            name: "&cRedstone Dust"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          redstone_block:
+            slot: 11
+            material: REDSTONE_BLOCK
+            amount: 16
+            buy: 525
+            sell: 131.25
+            name: "&cRedstone Block"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          redstone_torch:
+            slot: 12
+            material: REDSTONE_TORCH
+            amount: 16
+            buy: 90
+            sell: 22.5
+            name: "&cRedstone Torch"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          redstone_lamp:
+            slot: 13
+            material: REDSTONE_LAMP
+            amount: 8
+            buy: 225
+            sell: 56.25
+            name: "&6Redstone Lamp"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          repeater:
+            slot: 14
+            material: REPEATER
+            amount: 8
+            buy: 180
+            sell: 45
+            name: "&cRepeater"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          comparator:
+            slot: 15
+            material: COMPARATOR
+            amount: 8
+            buy: 225
+            sell: 56.25
+            name: "&cComparator"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          observer:
+            slot: 16
+            material: OBSERVER
+            amount: 4
+            buy: 187.5
+            sell: 45
+            name: "&7Observer"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          piston:
+            slot: 19
+            material: PISTON
+            amount: 8
+            buy: 187.5
+            sell: 45
+            name: "&7Piston"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          sticky_piston:
+            slot: 20
+            material: STICKY_PISTON
+            amount: 8
+            buy: 262.5
+            sell: 63.75
+            name: "&aSticky Piston"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          hopper:
+            slot: 21
+            material: HOPPER
+            amount: 8
+            buy: 450
+            sell: 112.5
+            name: "&7Hopper"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          dispenser:
+            slot: 22
+            material: DISPENSER
+            amount: 8
+            buy: 225
+            sell: 56.25
+            name: "&7Dispenser"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          dropper:
+            slot: 23
+            material: DROPPER
+            amount: 8
+            buy: 187.5
+            sell: 45
+            name: "&7Dropper"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          target:
+            slot: 24
+            material: TARGET
+            amount: 8
+            buy: 187.5
+            sell: 45
+            name: "&fTarget"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          note_block:
+            slot: 25
+            material: NOTE_BLOCK
+            amount: 8
+            buy: 187.5
+            sell: 45
+            name: "&6Note Block"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+      2:
+        items:
+          jukebox:
+            slot: 10
+            material: JUKEBOX
+            amount: 1
+            buy: 750
+            sell: 187.5
+            name: "&6Jukebox"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          lodestone:
+            slot: 11
+            material: LODESTONE
+            amount: 1
+            buy: 1500
+            sell: 375
+            name: "&cLodestone"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          lever:
+            slot: 12
+            material: LEVER
+            amount: 16
+            buy: 60
+            sell: 15
+            name: "&7Lever"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          stone_button:
+            slot: 13
+            material: STONE_BUTTON
+            amount: 16
+            buy: 60
+            sell: 15
+            name: "&7Stone Button"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          rail:
+            slot: 14
+            material: RAIL
+            amount: 16
+            buy: 187.5
+            sell: 45
+            name: "&7Rail"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          powered_rail:
+            slot: 15
+            material: POWERED_RAIL
+            amount: 16
+            buy: 337.5
+            sell: 82.5
+            name: "&6Powered Rail"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          detector_rail:
+            slot: 16
+            material: DETECTOR_RAIL
+            amount: 16
+            buy: 262.5
+            sell: 63.75
+            name: "&cDetector Rail"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          slime_block:
+            slot: 19
+            material: SLIME_BLOCK
+            amount: 16
+            buy: 525
+            sell: 131.25
+            name: "&aSlime Block"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          honey_block:
+            slot: 20
+            material: HONEY_BLOCK
+            amount: 16
+            buy: 525
+            sell: 131.25
+            name: "&6Honey Block"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          chest:
+            slot: 21
+            material: CHEST
+            amount: 16
+            buy: 150
+            sell: 37.5
+            name: "&6Chest"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+          light_weighted_pressure_plate:
+            slot: 22
+            material: LIGHT_WEIGHTED_PRESSURE_PLATE
+            amount: 8
+            buy: 187.5
+            sell: 45
+            name: "&eLight Weighted Pressure Plate"
+            lore: ["&7Left click: buy for &e%buy%", "&7Right click: sell for &e%sell%"]
+
+  shells:
+    slot: 16
+    icon: AMETHYST_SHARD
+    currency: shells
+    currency-placeholder: "%shells_short%"
+    currency-take-command: "shells take %player% %amount%"
+    currency-give-command: "shells give %player% %amount%"
+    currency-singular: "shell"
+    currency-plural: "shells"
+    title: "&5&lSHELL SHOP"
+    menu-title: "&5&lSHELLS &fSHOP"
+    lore:
+      - "&d&lSERVER &b&lSHOP"
+      - ""
+      - "&9Information:"
+      - "&5Â¦ &7Browse and &5purchase"
+      - "&5Â¦ &5premium &7shell perks"
+      - ""
+      - "&eâ–» &lCLICK &eto Open"
+    items:
+      amethyst_pickaxe:
+        slot: 10
+        material: NETHERITE_PICKAXE
+        custom: amethyst_pickaxe
+        amount: 1
+        buy: 2500
+        sell: 0.0
+        name: "&d&lAmethyst Pickaxe"
+        lore: ["&7Left click: buy for &e%buy%", "&bMines a 3x3 area.", "&7Use &e/amethystpick wall &7or &e/amethystpick floor&7."]
+      amethyst_axe:
+        slot: 11
+        material: NETHERITE_AXE
+        custom: amethyst_axe
+        amount: 1
+        buy: 2500
+        sell: 0.0
+        name: "&d&lAmethystAxe"
+        lore: ["&7Left click: buy for &e%buy%", "&bVein-mines every connected log type."]
+      shells:
+        slot: 12
+        material: AMETHYST_SHARD
+        amount: 16
+        buy: 300
+        sell: 0.0
+        name: "&5&lShells"
+        lore: ["&7Left click: buy for &e%buy%"]
+      diamond:
+        slot: 13
+        material: DIAMOND
+        amount: 1
+        buy: 1000
+        sell: 0.0
+        name: "&bDiamond"
+        lore: ["&7Left click: buy for &e%buy%"]
+
