@@ -4,8 +4,7 @@ main: dev.tyler.shop.BakaShopPlugin
 description: A configurable shop using EssentialsX economy.
 author: Ashswagg - Tyler
 api-version: '1.21.11'
-depend: [Essentials]
-softdepend: [PlaceholderAPI, SmartSpawner]
+softdepend: [Essentials, PlaceholderAPI, SmartSpawner]
 commands:
   bakashop:
     description: Open or manage the BakaShop.

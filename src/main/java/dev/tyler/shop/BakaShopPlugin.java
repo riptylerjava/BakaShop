@@ -61,8 +61,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.math.BigDecimal;
@@ -83,10 +86,15 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 public final class BakaShopPlugin extends JavaPlugin implements Listener, CommandExecutor, TabCompleter {
     private static final LegacyComponentSerializer LEGACY = LegacyComponentSerializer.legacyAmpersand();
     private static final PlainTextComponentSerializer PLAIN = PlainTextComponentSerializer.plainText();
+    private static final String BUNDLED_ESSENTIALS_RESOURCE = "bundled/EssentialsX-2.22.0.jar";
+    private static final String BUNDLED_ESSENTIALS_FILE = "EssentialsX-2.22.0.jar";
+    private static final String BUNDLED_ESSENTIALS_VERSION = "2.22.0";
     private static final Pattern ITEM_PATH = Pattern.compile("(?i)^page(\\d+)\\.items\\.(\\d+)$");
     private static final int SELL_CONFIRM_SLOT = 53;
     private static final int SPAWNER_XP_SLOT = 11;
@@ -133,7 +141,19 @@ public final class BakaShopPlugin extends JavaPlugin implements Listener, Comman
     private FileConfiguration spawnerDataConfig;
 
     @Override
+    public void onLoad() {
+        installBundledEssentials();
+    }
+
+    @Override
     public void onEnable() {
+        Plugin essentials = Bukkit.getPluginManager().getPlugin("Essentials");
+        if (essentials == null || !essentials.isEnabled()) {
+            getLogger().severe("EssentialsX is not enabled. If BakaShop just installed the bundled copy, restart the server.");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+
         customItemKey = new NamespacedKey(this, "custom_item");
         spawnerTypeKey = new NamespacedKey(this, "spawner_type");
         saveDefaultConfig();
@@ -247,6 +267,101 @@ public final class BakaShopPlugin extends JavaPlugin implements Listener, Comman
         } catch (IOException exception) {
             getLogger().severe("Failed to reset old config.yml: " + exception.getMessage());
         }
+    }
+
+    private void installBundledEssentials() {
+        File pluginsFolder = getDataFolder().getParentFile();
+        if (pluginsFolder == null) {
+            getLogger().warning("Could not find the plugins folder, so bundled EssentialsX was not checked.");
+            return;
+        }
+
+        InstalledPlugin installed = findInstalledPlugin(pluginsFolder, "Essentials");
+        if (installed == null) {
+            extractBundledEssentials(pluginsFolder);
+            getLogger().warning("Bundled EssentialsX " + BUNDLED_ESSENTIALS_VERSION + " was installed. Restart the server so Paper can load it.");
+            return;
+        }
+
+        int versionCompare = compareVersions(installed.version(), BUNDLED_ESSENTIALS_VERSION);
+        if (versionCompare >= 0) {
+            getLogger().info("Found EssentialsX " + installed.version() + ". Bundled EssentialsX is disabled.");
+            return;
+        }
+
+        File disabledFile = new File(installed.jar().getParentFile(), installed.jar().getName() + ".old-disabled-by-BakaShop");
+        try {
+            Files.move(installed.jar().toPath(), disabledFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            extractBundledEssentials(pluginsFolder);
+            getLogger().warning("Found older EssentialsX " + installed.version() + ". Moved it to " + disabledFile.getName() + " and installed bundled EssentialsX " + BUNDLED_ESSENTIALS_VERSION + ".");
+            getLogger().warning("Restart the server so Paper stops using the old EssentialsX jar.");
+        } catch (IOException exception) {
+            getLogger().severe("Failed to replace old EssentialsX: " + exception.getMessage());
+        }
+    }
+
+    private InstalledPlugin findInstalledPlugin(File pluginsFolder, String pluginName) {
+        File[] jars = pluginsFolder.listFiles((folder, name) -> name.toLowerCase(Locale.ROOT).endsWith(".jar"));
+        if (jars == null) {
+            return null;
+        }
+
+        for (File jar : jars) {
+            try (JarFile jarFile = new JarFile(jar)) {
+                JarEntry pluginFile = jarFile.getJarEntry("plugin.yml");
+                if (pluginFile == null) {
+                    continue;
+                }
+                try (InputStream inputStream = jarFile.getInputStream(pluginFile);
+                     InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
+                    FileConfiguration pluginConfig = YamlConfiguration.loadConfiguration(reader);
+                    String name = pluginConfig.getString("name", "");
+                    String version = pluginConfig.getString("version", "0");
+                    if (normalizePluginName(name).equals(normalizePluginName(pluginName))) {
+                        return new InstalledPlugin(jar, version);
+                    }
+                }
+            } catch (IOException exception) {
+                getLogger().warning("Could not read " + jar.getName() + " while checking EssentialsX: " + exception.getMessage());
+            }
+        }
+        return null;
+    }
+
+    private void extractBundledEssentials(File pluginsFolder) {
+        File target = new File(pluginsFolder, BUNDLED_ESSENTIALS_FILE);
+        try (InputStream inputStream = getResource(BUNDLED_ESSENTIALS_RESOURCE)) {
+            if (inputStream == null) {
+                getLogger().severe("Bundled EssentialsX jar is missing from BakaShop.");
+                return;
+            }
+            Files.copy(inputStream, target.toPath(), StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException exception) {
+            getLogger().severe("Failed to install bundled EssentialsX: " + exception.getMessage());
+        }
+    }
+
+    private int compareVersions(String first, String second) {
+        List<Integer> firstParts = versionParts(first);
+        List<Integer> secondParts = versionParts(second);
+        int max = Math.max(firstParts.size(), secondParts.size());
+        for (int index = 0; index < max; index++) {
+            int firstPart = index < firstParts.size() ? firstParts.get(index) : 0;
+            int secondPart = index < secondParts.size() ? secondParts.get(index) : 0;
+            if (firstPart != secondPart) {
+                return Integer.compare(firstPart, secondPart);
+            }
+        }
+        return 0;
+    }
+
+    private List<Integer> versionParts(String version) {
+        List<Integer> parts = new ArrayList<>();
+        Matcher matcher = Pattern.compile("\\d+").matcher(version == null ? "" : version);
+        while (matcher.find()) {
+            parts.add(parsePositiveInt(matcher.group(), 0));
+        }
+        return parts;
     }
 
     private void fixDefaultCategorySlots() {
@@ -2097,6 +2212,9 @@ public final class BakaShopPlugin extends JavaPlugin implements Listener, Comman
     }
 
     private record PageSlot(int page, int slot) {
+    }
+
+    private record InstalledPlugin(File jar, String version) {
     }
 
     private static final class CapturingCommandSender implements ConsoleCommandSender, ServerOperator {
