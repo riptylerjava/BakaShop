@@ -1,5 +1,5 @@
 name: BakaShop
-version: 1.0.0
+version: 1.0.1
 main: dev.tyler.shop.BakaShopPlugin
 description: A configurable shop using EssentialsX economy.
 author: Ashswagg - Tyler

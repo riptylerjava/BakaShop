@@ -829,11 +829,14 @@ public final class BakaShopPlugin extends JavaPlugin implements Listener, Comman
             return;
         }
 
-        InventoryHolder holder = event.getInventory().getHolder();
+        Inventory topInventory = event.getView().getTopInventory();
+        InventoryHolder holder = topInventory.getHolder();
+        int rawSlot = event.getRawSlot();
+        boolean clickedTopInventory = rawSlot >= 0 && rawSlot < topInventory.getSize();
         if (holder instanceof BakaSellHolder) {
-            if (event.getRawSlot() == SELL_CONFIRM_SLOT) {
+            if (rawSlot == SELL_CONFIRM_SLOT) {
                 event.setCancelled(true);
-                processSellInventory(player, event.getInventory());
+                processSellInventory(player, topInventory);
                 player.closeInventory();
             }
             return;
@@ -841,9 +844,9 @@ public final class BakaShopPlugin extends JavaPlugin implements Listener, Comman
 
         if (holder instanceof BakaSpawnerHolder spawnerHolder) {
             event.setCancelled(true);
-            if (event.getRawSlot() == SPAWNER_XP_SLOT) {
+            if (rawSlot == SPAWNER_XP_SLOT) {
                 collectSpawnerXp(player, spawnerHolder.locationKey());
-            } else if (event.getRawSlot() == SPAWNER_COLLECT_SLOT) {
+            } else if (rawSlot == SPAWNER_COLLECT_SLOT) {
                 collectSpawnerDrops(player, spawnerHolder.locationKey());
             }
             return;
@@ -851,13 +854,17 @@ public final class BakaShopPlugin extends JavaPlugin implements Listener, Comman
 
         if (holder instanceof BakaPurchaseHolder purchaseHolder) {
             event.setCancelled(true);
-            handlePurchaseMenuClick(player, purchaseHolder, event.getRawSlot());
+            if (clickedTopInventory) {
+                handlePurchaseMenuClick(player, purchaseHolder, rawSlot);
+            }
             return;
         }
 
         if (holder instanceof BakaMainMenuHolder) {
             event.setCancelled(true);
-            openClickedCategory(player, event.getRawSlot());
+            if (clickedTopInventory) {
+                openClickedCategory(player, rawSlot);
+            }
             return;
         }
 
@@ -871,7 +878,10 @@ public final class BakaShopPlugin extends JavaPlugin implements Listener, Comman
             return;
         }
 
-        int rawSlot = event.getRawSlot();
+        if (!clickedTopInventory) {
+            return;
+        }
+
         if (rawSlot == categoryBackSlot()) {
             suppressCategoryReturn.add(player.getUniqueId());
             openMainMenu(player);
